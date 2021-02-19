@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-
 <html>
-<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script
-        src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
-</head>
+	<title>My A-Frame Scene</title>
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+	<script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
 
-<body>
-    <a-scene>
-        <a-assets>
-            <a-asset-item id="optimerBoldFont"
-                src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
-        </a-assets>
-
-        <a-entity position= "0 3 -10" text-geometry="value: What's up"></a-entity>
-        <a-entity position= "0 2 -10" text-geometry="value: Dog?; font: #optimerBoldFont"></a-entity>
-    </a-scene>
-</body>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item id="balloon" src="scene.gltf"></a-asset-item>
+			</a-assets>
+			<a-box
+				color="red"
+				look-at="src: #player"
+				position="0 1 -5"
+				scale="0.5 0.5 5"
+			></a-box>
+			<a-entity id="balloonEnt" gltf-model="#balloon" scale="0.1 0.1 0.1" position="0 2 -10"></a-entity>
+			<a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+			<a-camera id="player"> <a-cursor></a-cursor></a-camera>
+		</a-scene>
+	</body>
+</html>
