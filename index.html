@@ -11,14 +11,14 @@
 	<script>
 		window.onload = function () {
 			let playing = false;
-			const will = document.querySelector("#will");
+			const video = document.querySelector("#video");
 			const button = document.querySelector(".play-button");
 			button.addEventListener("click", function () {
 				if (playing) {
-					will.pause();
+					video.pause();
 					playing = false;
 				} else {
-					will.play();
+					video.play();
 					playing = true;
 				}
 			});
@@ -37,7 +37,7 @@
 			z-index: 10;
 		}
 
-		.say-hi-button {
+		.play-button {
 			padding: 0.25em;
 			border-radius: 4px;
 			border: none;
@@ -55,11 +55,11 @@
 		<a-scene embedded arjs>
 			<a-assets>
 				<video
-					id="will"
+					id="video"
 					autoplay
 					loop="false"
 					preload="auto"
-					src="willvid.mp4"
+					src="AlphaTestVideo.webm"
 					playsinline
 				></video>
                 <a-asset-item id="balloon" src="./balloon/scene.gltf"></a-asset-item>
@@ -73,7 +73,7 @@
                 <a-entity id="balloon3" gltf-model="#balloon" scale="0.1 0.1 0.1" position="2 2 3"
                 animation="property: object3D.position.y; to: -2; dir: alternate; dur: 3000; loop: true"></a-entity>
 				<a-video
-					src="#will"
+					src="#video"
 					width="3"
 					height="2"
 					look-at="src: #player"
