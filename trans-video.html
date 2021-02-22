@@ -20,6 +20,16 @@
                 });
             }
         });
+
+        // AFRAME.registerComponent("trans", {
+        //         init: function () {
+        //             this.el.addEventListener("materialtextureloaded", e => {
+        //                 let material = this.el.getObject3D("mesh").material;
+        //                 material.map.format = THREE.RGBAFormat;
+        //                 material.map.needsUpdate = true;
+        //             });
+        //         }
+        //     });
     </script>
 </head>
 
@@ -28,6 +38,7 @@
         <a-assets>
             <a-asset-item id="balloon" src="./balloon/scene.gltf"></a-asset-item>
             <a-asset-item id="balloonCluster" src="./balloon-cluster/scene.gltf"></a-asset-item>
+            <video src="soccer1.webm" preload="auto" id="video" loop='true' playsinline></video>
         </a-assets>
         <a-entity id="balloon-container"
             animation__spin="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 24000">
